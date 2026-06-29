@@ -1700,6 +1700,10 @@
       z-index: 1;
     }
 
+    .project-card--meetmind::before {
+      background: linear-gradient(90deg, #4f46e5, #818cf8, #d97706, #f59e0b);
+    }
+
     .project-card--earth::before {
       background: linear-gradient(90deg, #3fb950, #8b7355, #58a6ff, #6b8e23);
     }
@@ -1725,11 +1729,35 @@
       opacity: 0.7;
     }
 
+    .project-card__badge {
+      position: absolute;
+      top: 1rem;
+      right: 1.25rem;
+      padding: 0.2rem 0.55rem;
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: #060910;
+      background-color: #f59e0b;
+      border-radius: 999px;
+      z-index: 10;
+      line-height: 1;
+    }
+
     .project-card__visual {
       height: 11rem;
       margin: 0.75rem 1.25rem 0;
       border-radius: 8px;
       opacity: 0.9;
+    }
+
+    .project-card__visual--meetmind {
+      background: linear-gradient(135deg,
+          #120a2e 0%,
+          #1e1b4b 25%,
+          #311042 50%,
+          #78350f 75%,
+          #d97706 100%);
     }
 
     .project-card__visual--earth {
@@ -1756,6 +1784,15 @@
           #311b92 55%,
           #006064 80%,
           #00acc1 100%);
+    }
+
+    .project-card__subtitle {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-top: -0.6rem;
+      margin-bottom: 0.85rem;
+      line-height: 1.4;
     }
 
     .project-card__body {
@@ -3077,7 +3114,50 @@ study.<span class="code-fn">optimize</span>(objective, n_trials=<span class="cod
         <h2 id="projects-heading" class="projects__heading reveal" data-reveal>Selected Work</h2>
 
         <div class="projects__grid">
-          <article class="project-card project-card--earth reveal" data-reveal data-reveal-delay="1">
+          <article class="project-card project-card--meetmind reveal" data-reveal data-reveal-delay="1">
+            <span class="project-card__badge">Flagship</span>
+            <span class="project-card__comment">// project_00 — flagship</span>
+            <div class="project-card__visual project-card__visual--meetmind" aria-hidden="true"></div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">MeetMind AI</h3>
+              <p class="project-card__subtitle">An AI meeting assistant that knows when to help — and when to stay quiet</p>
+              <div class="project-card__stack">
+                <span class="project-card__pill">Electron</span>
+                <span class="project-card__pill">React</span>
+                <span class="project-card__pill">FastAPI</span>
+                <span class="project-card__pill">Groq Llama 3.3</span>
+                <span class="project-card__pill">FAISS</span>
+                <span class="project-card__pill">Neo4j</span>
+                <span class="project-card__pill">WebSocket</span>
+              </div>
+              <p class="project-card__desc">
+                Desktop meeting assistant that prepares you before meetings,
+                surfaces action items and decisions during them, and drafts follow-up
+                emails after — governed by PRISM, a self-improving intervention gate that
+                decides when to speak up and, just as importantly, when to stay quiet.
+              </p>
+              <ul class="project-card__highlights">
+                <li>PRISM intervention gate — dual-speed reasoning on when (and when not) to interrupt</li>
+                <li>"Why I Stayed Quiet" log — transparency on every moment it chose silence</li>
+                <li>Tunable intervention modes: Quiet / Balanced / Active</li>
+                <li>FAISS episodic memory + Neo4j habit graph for long-term context across meetings</li>
+                <li>Accept/Edit/Dismiss feedback loop that self-tunes thresholds over time</li>
+                <li>Human-in-the-loop follow-up emails — drafted, never auto-sent</li>
+              </ul>
+            </div>
+            <div class="project-card__overlay">
+              <a href="https://github.com/chanduripranav/meetmind-ai" class="project-card__github" target="_blank"
+                rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                View on GitHub
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card project-card--earth reveal" data-reveal data-reveal-delay="2">
             <span class="project-card__comment">// project_01</span>
             <div class="project-card__visual project-card__visual--earth" aria-hidden="true"></div>
             <div class="project-card__body">
@@ -3106,7 +3186,7 @@ study.<span class="code-fn">optimize</span>(objective, n_trials=<span class="cod
             </div>
           </article>
 
-          <article class="project-card project-card--forecast reveal" data-reveal data-reveal-delay="2">
+          <article class="project-card project-card--forecast reveal" data-reveal data-reveal-delay="3">
             <span class="project-card__comment">// project_02</span>
             <div class="project-card__visual project-card__visual--forecast" aria-hidden="true"></div>
             <div class="project-card__body">
@@ -3135,7 +3215,7 @@ study.<span class="code-fn">optimize</span>(objective, n_trials=<span class="cod
             </div>
           </article>
 
-          <article class="project-card project-card--rag reveal" data-reveal data-reveal-delay="3">
+          <article class="project-card project-card--rag reveal" data-reveal data-reveal-delay="4">
             <span class="project-card__comment">// project_03</span>
             <div class="project-card__visual project-card__visual--rag" aria-hidden="true"></div>
             <div class="project-card__body">
@@ -3678,7 +3758,7 @@ study.<span class="code-fn">optimize</span>(objective, n_trials=<span class="cod
 
         "what are your technical skills?": "My core technical skills include:<ul><li><b>Languages & Tools:</b> Python, SQL, GitHub</li><li><b>Data Science & ML:</b> Machine Learning, Pandas, NumPy, Scikit-learn, XGBoost, Data Analysis, AI/ML</li><li><b>Data Visualization:</b> Power BI, Tableau</li><li><b>Web Development:</b> HTML, CSS, JavaScript (Software Engineering)</li></ul>",
 
-        "what projects have you worked on?": "Here are some of my projects:<ul><li><b>Satellite Image Land Classification:</b> For classifying land types from satellite images.</li><li><b>Time Series Demand Forecasting with XGBoost:</b> Forecasting using historical demand data.</li><li><b>Movie Recommendation System:</b> Recommender system using user and movie data.</li><li><b>Diabetes Prediction:</b> ML pipeline for predicting diabetes risk using healthcare data.</li><li><b>BigMart Sales Analysis:</b> Data analysis project focused on sales insights.</li></ul>",
+        "what projects have you worked on?": "Here are some of my projects:<ul><li><b>MeetMind AI:</b> Flagship desktop meeting assistant governed by PRISM intervention gate.</li><li><b>Satellite Image Land Classification:</b> For classifying land types from satellite images.</li><li><b>Time Series Demand Forecasting with XGBoost:</b> Forecasting using historical demand data.</li><li><b>Movie Recommendation System:</b> Recommender system using user and movie data.</li><li><b>Diabetes Prediction:</b> ML pipeline for predicting diabetes risk using healthcare data.</li><li><b>BigMart Sales Analysis:</b> Data analysis project focused on sales insights.</li></ul>",
 
         "are you available for internships?": "Yes! I'm actively interested in internships, Research Assistant roles, and AI/ML opportunities. I'm open to Data Science, Machine Learning, AI/ML Engineering, and software engineering roles.",
 
